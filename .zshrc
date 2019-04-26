@@ -90,10 +90,8 @@ source ~/.rvm/scripts/rvm
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias gww="gcc -Wall -Werror -Wextra"
-alias forecast="curl wttr.in/paris"
-alias forecastmq="curl wttr.in/fort-de-france"
+alias forecast="~/code/personal/scripts/forecast.sh"
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
-
 export ELECTRON_TRASH=gio
