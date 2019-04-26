@@ -17,7 +17,7 @@ hide_edge_borders none
 
 # change borders
 bindsym $mod+u border none
-bindsym $mod+y border pixel 1
+bindsym $mod+y border pixel 3
 bindsym $mod+n border normal
 
 # Font for window titles. Will also be used by the bar unless a different font
@@ -28,15 +28,14 @@ font xft:URWGothic-Book 11
 floating_modifier $mod
 
 # start a terminal
-#bindsym $mod+Return exec terminal
-bindsym $mod+Return exec urxvt
+bindsym $mod+Return exec terminal
 
 # kill focused window
 bindsym $mod+Shift+q kill
 
 # start program launcher
-#bindsym $mod+d exec --no-startup-id dmenu_recency
-bindsym $mod+d exec --no-startup-id rofi -show drun
+bindsym $mod+d exec --no-startup-id dmenu_recency
+# bindsym $mod+d exec --no-startup-id rofi -show drun
 
 # launch categorized menu
 bindsym $mod+z exec --no-startup-id morc_menu
@@ -59,12 +58,11 @@ bindsym $mod+Ctrl+m exec terminal -e 'alsamixer'
 
 # Start Applications
 bindsym $mod+Ctrl+b exec terminal -e 'bmenu'
-#bindsym $mod+F2 exec palemoon
-bindsym $mod+F2 exec google-chrome-stable
-# bindsym $mod+F3 exec pcmanfm
+bindsym $mod+F2 exec firefox
 bindsym $mod+F3 exec terminal -e "ranger"
+# bindsym $mod+F3 exec pcmanfm
 bindsym $mod+Shift+F3 exec gksu pcmanfm
-bindsym $mod+F5 exec terminal -e 'mocp'
+bindsym $mod+F5 exec terminal -e 'cmus'
 bindsym $mod+t exec --no-startup-id pkill compton
 bindsym $mod+Ctrl+t exec --no-startup-id compton -b -i 0.5
 bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart dunst'"
@@ -277,7 +275,8 @@ bindsym $mod+9 exec --no-startup-id ~/code/personal/scripts/i3lock.sh
 
 # Autostart applications
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-exec --no-startup-id nitrogen --restore; sleep 1; compton -b -i 0.90
+exec --no-startup-id xrandr | grep 'HDMI1 connected' && xrandr --output eDP1 --auto --output HDMI1 --primary --auto --left-of eDP1 --mode 1920x1080 --scale 0.9x0.9
+exec --no-startup-id nitrogen --restore #; sleep 1; compton -b -i 0.90
 # exec --no-startup-id manjaro-hello
 exec --no-startup-id nm-applet
 exec --no-startup-id xfce4-power-manager
@@ -285,11 +284,11 @@ exec --no-startup-id pamac-tray
 exec --no-startup-id clipit
 # exec --no-startup-id blueman-applet
 # exec_always --no-startup-id sbxkb
-exec --no-startup-id start_conky_maia
+# exec --no-startup-id start_conky_maia
 # exec --no-startup-id start_conky_green
-exec --no-startup-id redshift
+exec --no-startup-id redshift -l 48.8333:2.25
 # exec --no-startup-id xautolock -time 10 -locker blurlock
-exec --no-startup-id xautolock -time 10 -locker ~/code/personal/scripts/i3lock.sh
+exec --no-startup-id xautolock -detectsleep -time 10 -notify -notifier "notify-send -u critical 'Hello World!'" -locker ~/code/personal/scripts/i3lock.sh
 exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id fix_xcursor
 exec --no-startup-id synclient NaturalScrolling=1 VertScrollDelta=-113
@@ -372,9 +371,8 @@ bindsym $mod+m bar mode toggle
 #############################
 
 # Set inner/outer gaps
-gaps inner 15
-# gaps inner 14
-# gaps outer -2
+gaps inner 0
+gaps outer 0
 
 # Additionally, you can issue commands with the following syntax. This is useful to bind keys to changing the gap size.
 # gaps inner|outer current|all set|plus|minus <px>
@@ -382,7 +380,7 @@ gaps inner 15
 # gaps outer all plus 5
 
 # Smart gaps (gaps used if only more than one container on the workspace)
-smart_gaps on
+# smart_gaps on
 
 # Smart borders (draw borders around container only if it is not the only container on this workspace) 
 # on|no_gaps (on=always activate and no_gaps=only activate if the gap size to the edge of the screen is 0)
