@@ -14,6 +14,7 @@ export ZSH=/home/mac/.oh-my-zsh
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 # ZSH_THEME="robbyrussell"
 ZSH_THEME="agnoster"
+# ZSH_THEME="ys"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -60,6 +61,7 @@ ZSH_THEME="agnoster"
 plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
+source ~/.rvm/scripts/rvm
 
 # User configuration
 
@@ -90,4 +92,10 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias gww="gcc -Wall -Werror -Wextra"
-alias forecast="curl wttr.in/"
+alias forecast="curl wttr.in/paris"
+alias forecastmq="curl wttr.in/fort-de-france"
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
+
+export ELECTRON_TRASH=gio
