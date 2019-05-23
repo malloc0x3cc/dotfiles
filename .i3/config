@@ -34,6 +34,7 @@ bindsym $mod+Return exec terminal
 bindsym $mod+Shift+q kill
 
 # start program launcher
+# bindsym $mod+d exec --no-startup-id synapse
 bindsym $mod+d exec --no-startup-id dmenu_recency
 # bindsym $mod+d exec --no-startup-id rofi -show drun
 
@@ -59,9 +60,9 @@ bindsym $mod+Ctrl+m exec terminal -e 'alsamixer'
 # Start Applications
 bindsym $mod+Ctrl+b exec terminal -e 'bmenu'
 bindsym $mod+F2 exec firefox
-bindsym $mod+F3 exec terminal -e "ranger"
-# bindsym $mod+F3 exec pcmanfm
-bindsym $mod+Shift+F3 exec gksu pcmanfm
+bindsym $mod+Shift+F3 exec terminal -e "ranger"
+bindsym $mod+F3 exec pcmanfm
+# bindsym $mod+Shift+F3 exec gksu pcmanfm
 bindsym $mod+F5 exec terminal -e 'cmus'
 bindsym $mod+t exec --no-startup-id pkill compton
 bindsym $mod+Ctrl+t exec --no-startup-id compton -b -i 0.5
@@ -275,7 +276,7 @@ bindsym $mod+9 exec --no-startup-id ~/code/personal/scripts/i3lock.sh
 
 # Autostart applications
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-exec --no-startup-id xrandr | grep 'HDMI1 connected' && xrandr --output eDP1 --auto --output HDMI1 --primary --auto --left-of eDP1 --mode 1920x1080 --scale 0.9x0.9
+exec --no-startup-id xrandr | grep 'HDMI1 connected' && xrandr --output eDP1 --auto --output HDMI1 --primary --auto --mode 1920x1080 --left-of eDP1
 exec --no-startup-id nitrogen --restore #; sleep 1; compton -b -i 0.90
 # exec --no-startup-id manjaro-hello
 exec --no-startup-id nm-applet
@@ -286,9 +287,9 @@ exec --no-startup-id clipit
 # exec_always --no-startup-id sbxkb
 # exec --no-startup-id start_conky_maia
 # exec --no-startup-id start_conky_green
-exec --no-startup-id redshift -l 48.8333:2.25
-# exec --no-startup-id xautolock -time 10 -locker blurlock
-exec --no-startup-id xautolock -detectsleep -time 10 -notify -notifier "notify-send -u critical 'Hello World!'" -locker ~/code/personal/scripts/i3lock.sh
+exec --no-startup-id /usr/lib/geoclue-2.0/demos/agent
+exec --no-startup-id redshift
+exec_always --no-startup-id xautolock -detectsleep -time 5 -locker ~/code/personal/scripts/i3lock.sh -notify 30 -notifier "notify-send -u critical -t 10000 -- 'locking screen in 30 seconds'"
 exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id fix_xcursor
 exec --no-startup-id synclient NaturalScrolling=1 VertScrollDelta=-113
@@ -371,7 +372,7 @@ bindsym $mod+m bar mode toggle
 #############################
 
 # Set inner/outer gaps
-gaps inner 0
+gaps inner 25
 gaps outer 0
 
 # Additionally, you can issue commands with the following syntax. This is useful to bind keys to changing the gap size.
