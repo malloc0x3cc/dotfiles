@@ -1,4 +1,6 @@
-*.font: xft:Hack Mono:size=8
+*.font:         xft:Hack-Regular:size=8,xft:Symbola,xft:TerminessTTFNerdFontMono:size=8
+*.boldFont:     xft:Hack-Bold:size=8:weight=bold,xft:Symbola,xft:TerminessTTFNerdFontMono:size=8
+*.italicFont:   xft:Hack-RegularOblique:size=8:slant=italic,xft:Symbola,xft:TerminessTTFNerdFontMono:size=8
 
 Xft.dpi:                        100
 Xft.antialias:                  1
@@ -8,18 +10,18 @@ Xft.hintstyle:                  hintslight
 Xft.lcdfilter:                  lcdlight
 Xft.rgba:                       rgb
 
-URxvt*termName:                 rxvt-256color
+URxvt*termName:                 rxvt-unicode-256color
 URxvt.depth:                    32
-URxvt*lineSpace:                1
-URxvt.letterSpace:              -1
+URxvt*lineSpace:                -1
+URxvt.letterSpace:              0
 URxvt.iso14755:                 false
 URxvt.iso14755_52:              false
 URxvt*geometry:                 65x17
 URxvt.scrollBar:                false
 URxvt*loginShell:               true
 URxvt.internalBorder:           25
-URxvt.perl-ext:	 		default,matcher
-URxvt.url-launcher:             firefox
+URxvt.perl-ext-common:	 		default,matcher
+URxvt.url-launcher:             $BROWSER
 URxvt.matcher.button: 		1
 
 ! urxvt*transparent: true

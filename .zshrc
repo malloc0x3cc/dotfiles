@@ -12,7 +12,7 @@ export ZSH=/home/mac/.oh-my-zsh
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="ys"
+ZSH_THEME="agnoster"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -96,8 +96,14 @@ alias update-ruby="rvm install ruby --latest && rvm use ruby --latest --default"
 alias lsdj="wine ~/Downloads/bgb/bgb.exe ~/Downloads/bgb/lsdj.gb 2>1&"
 alias pico8="~/Downloads/pico-8/pico8"
 
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+# Exports
 export PATH="$PATH:$HOME/.rvm/bin"
 export ELECTRON_TRASH=gio
 export TERMINAL=urxvt
+export EDITOR=vim
+export VISUAL=vim
 export BROWSER=firefox
+
+# Enabling powerline
+powerline-daemon -q
+. /usr/lib/python3.7/site-packages/powerline/bindings/zsh/powerline.zsh

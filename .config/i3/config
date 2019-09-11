@@ -7,7 +7,7 @@ set $mod Mod4
 # Set display resolution
 exec_always --no-startup-id xrandr --output eDP1 --mode 1366x768 --rate 60.00
 
-font pango:Hack Mono 8
+font pango:Hack 8
 
 # Press mod key to be able to resize floating windows
 floating_modifier $mod
@@ -209,20 +209,21 @@ exec_always --no-startup-id wal -R
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # Screen Shots
-bindsym Print exec scrot
+bindsym Print exec scrot && notify-send -u low -t 5000 "test"
 bindsym $mod+Print exec "scrot --line style=dash,width=3 --select"
 
 # Open stuff
 bindsym $mod+F2 exec firefox
-bindsym $mod+F3 exec pcmanfm
+bindsym $mod+F3 exec terminal -e ranger
+bindsym $mod+F3+Shift exec pcmanfm
 bindsym $mod+0 exec --no-startup-id ~/code/personal/scripts/i3lock.sh
 
 # Autorun
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-exec --no-startup-id nitrogen --restore #; sleep 1; compton -b -i 0.90
+# exec --no-startup-id nitrogen --restore #; sleep 1; compton -b -i 0.90
 exec --no-startup-id /usr/lib/geoclue-2.0/demos/agent
 exec_always compton -i 0.85
-exec_always redshift
+exec --no-startup-id redshift
 exec_always --no-startup-id xautolock -detectsleep -time 10 -locker ~/code/personal/scripts/i3lock.sh -notify 30 -notifier "notify-send -u critical -t 10000 -- 'locking screen in 30 seconds'"
 exec --no-startup-id manjaro-hello
 exec --no-startup-id nm-applet
