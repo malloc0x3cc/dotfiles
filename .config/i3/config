@@ -209,13 +209,14 @@ exec_always --no-startup-id wal -R
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # Screen Shots
-bindsym Print exec scrot && notify-send -u low -t 5000 "test"
-bindsym $mod+Print exec "scrot --line style=dash,width=3 --select"
+bindsym Print exec "scrot -e 'mv $f ~/Pictures/' && notify-send -u low -t 5000 'Screenshot taken !'"
+bindsym $mod+Print exec "notify-send -u low -t 5000 'Select the area to grab' && scrot --line style=dash,width=3 --select -e 'mv $f ~/Pictures/' && notify-send -u low -t 5000 'Screenshot taken !'"
+
 
 # Open stuff
 bindsym $mod+F2 exec firefox
 bindsym $mod+F3 exec terminal -e ranger
-bindsym $mod+F3+Shift exec pcmanfm
+bindsym $mod+F4 exec pcmanfm
 bindsym $mod+0 exec --no-startup-id ~/code/personal/scripts/i3lock.sh
 
 # Autorun
