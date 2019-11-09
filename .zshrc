@@ -59,7 +59,6 @@ export UPDATE_ZSH_DAYS=1
 plugins=(git archlinux encode64 extract)
 
 source $ZSH/oh-my-zsh.sh
-source ~/.rvm/scripts/rvm
 
 # User configuration
 
@@ -91,13 +90,16 @@ source ~/.rvm/scripts/rvm
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias gww="gcc -Wall -Werror -Wextra"
 alias forecast="~/code/personal/scripts/forecast.sh"
-alias pkg-list="pacman -Qqe > ~/pkglist.txt && echo \"Package list is up to date !\""
+alias pkg-list="pacman -Qqe > ~/pkglist.txt && notify-send -u low -t 5000 'Package list is up to date !'"
 alias update-ruby="rvm install ruby --latest && rvm use ruby --latest --default"
 alias lsdj="wine ~/Downloads/bgb/bgb.exe ~/Downloads/bgb/lsdj.gb 2>1&"
 alias pico8="~/Downloads/pico-8/pico8"
+alias clock="~/code/personal/scripts/clock.sh"
+alias restart-wifi="sudo ip link set wlp3s0 down; sudo ip link set wlp3s0 up && notify-send -u low -t 5000 'Wifi restarted !'"
+alias mc-cracked="java -jar /home/mac/.minecraft/skaiacraft-launcher-v3.jar"
+alias everquest="~/code/public/project1999-linux/launch_titanium.sh"
 
 # Exports
-export PATH="$PATH:$HOME/.rvm/bin"
 export ELECTRON_TRASH=gio
 export TERMINAL=urxvt
 export EDITOR=vim
