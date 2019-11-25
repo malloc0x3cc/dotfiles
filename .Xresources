@@ -22,7 +22,7 @@ URxvt*geometry:                 65x17
 URxvt.scrollBar:                false
 URxvt*loginShell:               true
 URxvt.internalBorder:           25
-URxvt.perl-ext-common:	 		default,matcher
+URxvt.perl-ext-common:	 	default,matcher,font-size
 URxvt.url-launcher:             $BROWSER
 URxvt.matcher.button: 		1
 

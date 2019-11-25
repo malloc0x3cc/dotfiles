@@ -89,15 +89,15 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias gww="gcc -Wall -Werror -Wextra"
-alias forecast="~/code/personal/scripts/forecast.sh"
+alias forecast="curl 'wttr.in/$1'"
 alias pkg-list="pacman -Qqe > ~/pkglist.txt && notify-send -u low -t 5000 'Package list is up to date !'"
-alias update-ruby="rvm install ruby --latest && rvm use ruby --latest --default"
+alias update-ruby="rvm get latest && rvm install ruby --latest && rvm use ruby --latest --default"
 alias lsdj="wine ~/Downloads/bgb/bgb.exe ~/Downloads/bgb/lsdj.gb 2>1&"
 alias pico8="~/Downloads/pico-8/pico8"
-alias clock="~/code/personal/scripts/clock.sh"
+alias clock="~/code/public/scripts/clock.sh"
 alias restart-wifi="sudo ip link set wlp3s0 down; sudo ip link set wlp3s0 up && notify-send -u low -t 5000 'Wifi restarted !'"
-alias mc-cracked="java -jar /home/mac/.minecraft/skaiacraft-launcher-v3.jar"
 alias everquest="~/code/public/project1999-linux/launch_titanium.sh"
+alias update-dotfiles="~HOME/code/public/dotfiles/scripts/update_dotfiles.sh"
 
 # Exports
 export ELECTRON_TRASH=gio
@@ -108,4 +108,10 @@ export BROWSER=firefox
 
 # Enabling powerline
 powerline-daemon -q
-. /usr/lib/python3.7/site-packages/powerline/bindings/zsh/powerline.zsh
+. /usr/lib/python3.8/site-packages/powerline/bindings/zsh/powerline.zsh
+
+PATH="$PATH:$(ruby -e 'puts Gem.user_dir')/bin"
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"

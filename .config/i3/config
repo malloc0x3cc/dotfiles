@@ -192,7 +192,7 @@ bindsym $mod+r mode "resize"
 #        status_command i3status
 #}
 
-for_window [class="^.*"] border pixel 1 # hide window titles
+for_window [class="^.*"] border pixel 5 # hide window titles
 
 ## keybinds
 bindsym $mod+F2 exec firefox
@@ -206,9 +206,10 @@ exec_always --no-startup-id xrdb ~/.Xresources # needed because no desktop manag
 exec_always /usr/lib/geoclue-2.0/demos/agent
 exec_always compton -i 0.75
 exec_always wal -R
+exec_always xrandr --output HDMI-1 --auto --primary --left-of eDP-1 --output eDP-1 --auto
 exec_always $HOME/.config/polybar/launch_polybar.sh
 exec --no-startup-id redshift
-exec_always --no-startup-id xautolock -detectsleep -time 10 -locker ~/code/personal/scripts/i3lock.sh -notify 30 -notifier "notify-send -u critical -t 10000 -- 'locking screen in 30 seconds'"
+exec_always --no-startup-id xautolock -detectsleep -time 10 -locker $HOME/code/personal/scripts/i3lock.sh -notify 30 -notifier "notify-send -u critical -t 10000 -- 'locking screen in 30 seconds'"
 
 # Pulse Audio controls
 #bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
