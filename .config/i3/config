@@ -193,10 +193,11 @@ bindsym $mod+r mode "resize"
 #}
 
 for_window [class="^.*"] border pixel 5 # hide window titles
+workspace_auto_back_and_forth yes
 
 ## keybinds
 bindsym $mod+F2 exec firefox
-bindsym $mod+F3 exec ranger
+bindsym $mod+F3 exec i3-sensible-terminal -e ranger
 bindsym $mod+F4 exec pcmanfm
 bindsym $mod+0 exec --no-startup-id ~/code/personal/scripts/i3lock.sh
 bindsym Print exec "scrot -e 'mv $f ~/Pictures/' && notify-send -u low -t 5000 'Screenshot taken !'"
@@ -206,10 +207,11 @@ exec_always --no-startup-id xrdb ~/.Xresources # needed because no desktop manag
 exec_always /usr/lib/geoclue-2.0/demos/agent
 exec_always compton -i 0.75
 exec_always wal -R
-exec_always xrandr --output HDMI-1 --auto --primary --left-of eDP-1 --output eDP-1 --auto
+exec_always xrandr --output HDMI-1-1 --auto --primary --left-of eDP-1-1 --output eDP-1-1 --auto
 exec_always $HOME/.config/polybar/launch_polybar.sh
 exec --no-startup-id redshift
 exec_always --no-startup-id xautolock -detectsleep -time 10 -locker $HOME/code/personal/scripts/i3lock.sh -notify 30 -notifier "notify-send -u critical -t 10000 -- 'locking screen in 30 seconds'"
+exec --no-startup-id i3-sensible-terminal -hold -e $HOME/code/public/dotfiles/scripts/welcome.sh
 
 # Pulse Audio controls
 #bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
@@ -240,7 +242,7 @@ gaps outer 30
 # gaps outer all plus 5
 
 # Smart gaps (gaps used if only more than one container on the workspace)
-# smart_gaps on
+#smart_gaps on
 
 # Smart borders (draw borders around container only if it is not the only container on this workspace)
 # on|no_gaps (on=always activate and no_gaps=only activate if the gap size to the edge of the screen is 0)
