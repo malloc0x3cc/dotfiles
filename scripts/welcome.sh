@@ -8,7 +8,10 @@ place="Paris"
 neofetch
 cal
 date
-curl "wttr.in/~$place" && echo -e "\n"
+nm-online -t 10
+if [ $? -eq 0 ]; then
+	curl "wttr.in/~$place" && echo -e "\n"
+fi
 dfc
 echo -e "\nHello,"
 figlet $USER

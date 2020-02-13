@@ -89,7 +89,7 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias gww="gcc -Wall -Werror -Wextra"
-alias forecast="curl 'wttr.in/$1'"
+alias forecast="~/code/public/dotfiles/scripts/forecast.sh"
 alias pkg-list="pacman -Qqe > ~/pkglist.txt && notify-send -u low -t 5000 'Package list is up to date !'"
 alias update-ruby="rvm get latest && rvm install ruby --latest && rvm use ruby --latest --default"
 alias lsdj="wine ~/Games/bgb/bgb64.exe ~/Games/bgb/lsdj.gb 2>1&"
@@ -99,6 +99,7 @@ alias restart-wifi="sudo ip link set wlp3s0 down; sudo ip link set wlp3s0 up && 
 alias everquest="~/code/public/project1999-linux/launch_titanium.sh"
 alias update-dotfiles="~HOME/code/public/dotfiles/scripts/update_dotfiles.sh"
 alias osu="~/code/public/dotfiles/scripts/osu.sh"
+alias rules="< ~/Documents/rules_of_the_internet.md"
 
 # Exports
 export ELECTRON_TRASH=gio
@@ -116,3 +117,5 @@ PATH="$PATH:$(ruby -e 'puts Gem.user_dir')/bin"
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+
+#cat /etc/motd
