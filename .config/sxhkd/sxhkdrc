@@ -14,7 +14,7 @@ super + @space
 
 # make sxhkd reload its configuration files:
 super + Escape
-	pkill -USR1 -x sxhkd
+	pkill -USR1 -x sxhkd && notify-send -u low "sxhkd configuration reloaded"
 
 # Scrot
 Print
@@ -34,13 +34,13 @@ super + F4
 
 # Pulse Audio controls
 XF86AudioRaiseVolume
-	pactl set-sink-volume @DEFAULT_SINK@ +5%
+	pactl set-sink-volume @DEFAULT_SINK@ +5% && notify-send -u low -t 5000 'Volume +5%'
 XF86AudioLowerVolume
-	pactl set-sink-volume @DEFAULT_SINK@ -5%
+	pactl set-sink-volume @DEFAULT_SINK@ -5% && notify-send -u low -t 5000 'Volume -5%'
 XF86AudioMute
-	pactl set-sink-mute @DEFAULT_SINK@ toggle
+	pactl set-sink-mute @DEFAULT_SINK@ toggle && notify-send -u low -t 5000 'sink-mute'
 XF86AudioMicMute
-	pactl set-source-mute @DEFAULT_SOURCE@ toggle
+	pactl set-source-mute @DEFAULT_SOURCE@ toggle && notify-send -u low -t 5000 'source-mute'
 
 # Media player controls
 XF86AudioPlay

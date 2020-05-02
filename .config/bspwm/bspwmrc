@@ -6,6 +6,7 @@ picom &
 wal --iterative -i Pictures/wal/
 polybar example &
 nm-applet &
+redshift-gtk &
 
 bspc monitor -d I II III IV V VI VII VIII IX X
 

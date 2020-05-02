@@ -100,6 +100,7 @@ alias everquest="~/code/public/project1999-linux/launch_titanium.sh"
 alias update-dotfiles="~HOME/code/public/dotfiles/scripts/update_dotfiles.sh"
 alias osu="~/code/public/dotfiles/scripts/osu.sh"
 alias rules="< ~/Documents/rules_of_the_internet.md"
+alias pacman-mirrorlist="~/code/public/pacman-mirrorlist/run.sh"
 
 # Exports
 export ELECTRON_TRASH=gio

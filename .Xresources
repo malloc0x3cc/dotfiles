@@ -4,7 +4,7 @@
 *.boldFont:     xft:Hack-Bold:size=font_size:weight=bold,xft:Symbola,xft:TerminessTTFNerdFontMono:size=font_size
 *.italicFont:   xft:Hack-RegularOblique:size=font_size:slant=italic,xft:Symbola,xft:TerminessTTFNerdFontMono:size=font_size
 
-Xft.dpi:                        100
+Xft.dpi:                        117
 Xft.antialias:                  1
 Xft.autohint:                   1
 Xft.hinting:                    1

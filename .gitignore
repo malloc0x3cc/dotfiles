@@ -1,2 +1,5 @@
 pkglist.txt
 .config/ranger
+config.def.h
+.config/polybar/polybar-scripts/
+.config/polybar/polybar-themes/
