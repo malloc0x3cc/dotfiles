@@ -24,10 +24,6 @@ Print
 super + F2
 	firefox
 
-# Brave
-super + shift + F2
-	brave
-
 # Ranger
 super + F3
 	urxvt -e ranger
