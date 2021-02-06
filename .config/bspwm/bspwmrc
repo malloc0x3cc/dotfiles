@@ -1,12 +1,8 @@
 #! /bin/sh
 
-sxhkd &
-xrdb --merge ~/.Xressorces
-picom &
-wal --iterative -i Pictures/wal/
+xrdb ~/.Xressorces
+wal -c && wal --iterative -i Pictures/wal/
 polybar example &
-nm-applet &
-redshift-gtk &
 
 bspc monitor -d I II III IV V VI VII VIII IX X
 

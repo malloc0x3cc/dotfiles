@@ -24,23 +24,27 @@ Print
 super + F2
 	firefox
 
+# Brave
+super + shift + F2
+	brave
+
 # Ranger
 super + F3
 	urxvt -e ranger
 
-# PcManFM
+# Thunar
 super + F4
-	 pcmanfm
+	 thunar
 
 # Pulse Audio controls
 XF86AudioRaiseVolume
-	pactl set-sink-volume @DEFAULT_SINK@ +5% && notify-send -u low -t 5000 'Volume +5%'
+	pactl set-sink-volume @DEFAULT_SINK@ +5%
 XF86AudioLowerVolume
-	pactl set-sink-volume @DEFAULT_SINK@ -5% && notify-send -u low -t 5000 'Volume -5%'
+	pactl set-sink-volume @DEFAULT_SINK@ -5%
 XF86AudioMute
-	pactl set-sink-mute @DEFAULT_SINK@ toggle && notify-send -u low -t 5000 'sink-mute'
+	pactl set-sink-mute @DEFAULT_SINK@ toggle
 XF86AudioMicMute
-	pactl set-source-mute @DEFAULT_SOURCE@ toggle && notify-send -u low -t 5000 'source-mute'
+	pactl set-source-mute @DEFAULT_SOURCE@ toggle
 
 # Media player controls
 XF86AudioPlay
@@ -53,11 +57,13 @@ XF86AudioPrev
 	playerctl previous
 
 # Screen brightness controls
-bindsym XF86MonBrightnessUp exec "xbacklight -inc 10; notify-send 'brightness up'"
-bindsym XF86MonBrightnessDown exec "xbacklight -dec 10; notify-send 'brightness down'"
+XF86MonBrightnessUp
+	xbacklight -inc 10
+XF86MonBrightnessDown
+	xbacklight -dec 10
 
 # Lockscreen
-super + alt + l 
+super + semicolon
 	xscreensaver-command -lock
 
 #
