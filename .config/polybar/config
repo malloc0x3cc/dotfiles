@@ -261,12 +261,13 @@ format-disconnected =
 type = internal/date
 interval = 1
 
-date =
-date-alt = " %d-%m-%Y"
+date = " %d-%m-%Y"
+date-alt =
 
-time = %H:%M
-time-alt = %H:%M:%S
+time = %H:%M:%S
+time-alt = %H:%M
 
+format = 🕓 <label>
 format-prefix = 
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = #0a6cf5
