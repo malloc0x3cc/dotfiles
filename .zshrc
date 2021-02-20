@@ -97,6 +97,7 @@ alias clock="~/code/public/dotfiles/scripts/clock.sh"
 alias restart-wifi="sudo ip link set wlp3s0 down; sudo ip link set wlp3s0 up && notify-send -u low -t 5000 'Wifi restarted !'"
 alias everquest="~/code/public/project1999-linux/launch_titanium.sh"
 alias update-dotfiles="~/code/public/dotfiles/scripts/update_dotfiles.sh"
+alias discord-overlay="discover-overlay > /dev/null 2>&1 &; discord"
 
 # Exports
 export ELECTRON_TRASH=gio

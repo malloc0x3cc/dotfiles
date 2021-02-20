@@ -1,0 +1,13 @@
+#define font_size 10
+
+*.font:         xft:Hack-Regular:size=font_size,xft:Symbola,xft:TerminessTTFNerdFontMono:size=font_size
+*.boldFont:     xft:Hack-Bold:size=font_size:weight=bold,xft:Symbola,xft:TerminessTTFNerdFontMono:size=font_size
+*.italicFont:   xft:Hack-RegularOblique:size=font_size:slant=italic,xft:Symbola,xft:TerminessTTFNerdFontMono:size=font_size
+
+Xft.dpi:                        106
+Xft.antialias:                  1
+Xft.autohint:                   1
+Xft.hinting:                    1
+Xft.hintstyle:                  hintslight
+Xft.lcdfilter:                  lcdlight
+Xft.rgba:                       rgb
