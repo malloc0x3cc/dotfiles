@@ -34,7 +34,22 @@ fi
 
 ### Custom
 #Nvidia offload
-#/usr/bin/prime-offload
+/usr/bin/prime-offload
+
+# Daemons
+/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+picom &
+sxhkd &
+~/scripts/lightsonplus/lightson+ &
+
+# Applets
+nm-applet &
+optimus-manager-qt &
+pamac-tray &
+redshift-gtk &
+
+# Window Manager
+bspwm
 
 # Nvidia switch
-#sudo /usr/bin/prime-switch
+sudo /usr/bin/prime-switch

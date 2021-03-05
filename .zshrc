@@ -111,7 +111,5 @@ export PATH="$PATH:/home/mac/.local/bin" #PIP
 powerline-daemon -q
 . /usr/lib/python3.9/site-packages/powerline/bindings/zsh/powerline.zsh
 
-## AutostartX at login
-#if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
-#  exec startx
-#fi
+# NVM
+source /usr/share/nvm/init-nvm.sh
