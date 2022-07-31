@@ -14,11 +14,11 @@ super + @space
 
 # make sxhkd reload its configuration files:
 super + Escape
-	pkill -USR1 -x sxhkd && notify-send -u low "sxhkd configuration reloaded"
+	pkill -USR1 -x sxhkd  && notify-send -u low -t 5000 'sxhkd configuration reloaded.'
 
 # Scrot
 Print
-	scrot -e 'mv $f ~/Pictures/' && notify-send -u low -t 5000 'Screenshot taken !'
+	scrot -e 'mv $f ~/Pictures/Screenshots' && notify-send -u low -t 5000 'Screenshot taken !'
 
 # Firefox
 super + F2
@@ -30,17 +30,17 @@ super + F3
 
 # Thunar
 super + F4
-	 thunar
+	thunar
 
 # Pulse Audio controls
 XF86AudioRaiseVolume
-	pactl set-sink-volume @DEFAULT_SINK@ +5%
+	pactl set-sink-volume @DEFAULT_SINK@ +5% && dunstify -t 1000 -r 1 "Volume up (+5%)" "$(pamixer --get-volume)"
 XF86AudioLowerVolume
-	pactl set-sink-volume @DEFAULT_SINK@ -5%
+	pactl set-sink-volume @DEFAULT_SINK@ -5% && dunstify -t 1000 -r 1 "Volume down (-5%)" "$(pamixer --get-volume)"
 XF86AudioMute
-	pactl set-sink-mute @DEFAULT_SINK@ toggle
+	pactl set-sink-mute @DEFAULT_SINK@ toggle && dunstify -t 1000 -r 1 "Volume muted (0%)" "$(pamixer --get-mute)"
 XF86AudioMicMute
-	pactl set-source-mute @DEFAULT_SOURCE@ toggle
+	pactl set-source-mute @DEFAULT_SOURCE@ toggle && dunstify -t 1000 -r 1 "Mic mute" "$(pamixer --get-mute)"
 
 # Media player controls
 XF86AudioPlay
@@ -57,10 +57,6 @@ XF86MonBrightnessUp
 	xbacklight -inc 10
 XF86MonBrightnessDown
 	xbacklight -dec 10
-
-# Lockscreen
-super + semicolon
-	xscreensaver-command -lock
 
 #
 # bspwm hotkeys
@@ -82,9 +78,9 @@ super + m
 super + y
 	bspc node newest.marked.local -n newest.!automatic.local
 
-# swap the current node and the biggest node
+# swap the current node and the biggest window
 super + g
-	bspc node -s biggest
+	bspc node -s biggest.window
 
 #
 # state/flags
@@ -110,9 +106,9 @@ super + {_,shift + }{h,j,k,l}
 super + {p,b,comma,period}
 	bspc node -f @{parent,brother,first,second}
 
-# focus the next/previous node in the current desktop
+# focus the next/previous window in the current desktop
 super + {_,shift + }c
-	bspc node -f {next,prev}.local
+	bspc node -f {next,prev}.local.!hidden.window
 
 # focus the next/previous desktop in the current monitor
 super + bracket{left,right}
