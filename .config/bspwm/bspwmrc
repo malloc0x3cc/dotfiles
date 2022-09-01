@@ -4,12 +4,17 @@ pgrep -x sxhkd > /dev/null || sxhkd &
 
 # Setup monitors / workspaces
 if [ "$(xrandr | grep ' connected' | wc -l)" = "2" ]; then
+	# Internal + VGA
 	xrandr --output DP-1-1 --mode 1280x960 --left-of eDP-1-1 --primary
 	bspc monitor DP-1-1 -d I
 	bspc monitor eDP-1-1 -d II III IV V VI VII VIII IX X
+	
+	# VGA only
+	# xrandr --output DP-1-1 --mode 1280x960 --primary --output eDP-1-1 --off
+	# bspc monitor DP-1-1 -d I II III IV V VI VII VIII IX X
 else
+	# Internal only
 	xrandr --output eDP-1-1 --auto
-	#xrandr --output eDP-1-1 --mode 1368x768
 	bspc monitor -d I II III IV V VI VII VIII IX X
 fi
 
@@ -19,6 +24,7 @@ picom  --daemon --config $HOME/.config/picom/picom.conf
 dunst &
 $HOME/.config/polybar/launch.sh &
 wal -c && wal -i $HOME/Pictures/Wallpapers/lainblue.jpg &
+#yakuake &
 optimus-manager-qt &
 nm-applet &
 
