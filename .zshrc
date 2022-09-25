@@ -99,6 +99,9 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias norminette-v3="~/.local/bin/norminette"
+alias norminette="~/.local/bin/norminette"
 alias pkg-list="pacman -Qqe > ~/pkglist.txt && notify-send -u low -t 5000 'Package list is up to date !'"
 alias update-dotfiles="~/Desktop/Code/dotfiles/scripts/update_dotfiles.sh"
+alias wprefs="/usr/lib/GNUstep/Applications/WPrefs.app/WPrefs"
+alias clock="~/Desktop/Code/dotfiles/scripts/clock.sh"
+alias forecast="curl wttr.in"

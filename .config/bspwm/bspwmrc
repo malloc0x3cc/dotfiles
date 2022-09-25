@@ -23,7 +23,7 @@ xrdb $HOME/.Xressorces &
 picom  --daemon --config $HOME/.config/picom/picom.conf
 dunst &
 $HOME/.config/polybar/launch.sh &
-wal -c && wal -i $HOME/Pictures/Wallpapers/lainblue.jpg &
+wal -c && wal -i $HOME/Pictures/wal &
 #yakuake &
 optimus-manager-qt &
 nm-applet &

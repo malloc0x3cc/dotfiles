@@ -4,13 +4,11 @@
 
 # terminal emulator
 super + Return
-	urxvt
+	st -e zsh -c 'wal -R && clear; exec zsh'
 
 # program launcher
-#super + @space
-#	dmenu_run
 super + @space
-	rofi -combi-modi window,drun,ssh -theme solarized -font "hack 10" -show combi
+	dmenu_run
 
 # make sxhkd reload its configuration files:
 super + Escape
