@@ -20,13 +20,16 @@ fi
 
 # Launch programs
 xrdb $HOME/.Xressorces &
-#picom  --daemon --config $HOME/.config/picom/picom.conf
+picom  --daemon --config $HOME/.config/picom/picom.conf
 dunst &
 $HOME/.config/polybar/launch.sh &
 wal -c && wal -i $HOME/Pictures/wal &
 #yakuake &
 optimus-manager-qt &
 nm-applet &
+
+# Startup sound
+mplayer ~/Music/boot.wav &
 
 # Fix for theme issues (optimus-manager-qt has to be already running)
 export XDG_CURRENT_DESKTOP=KDE
