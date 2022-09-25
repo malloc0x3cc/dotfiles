@@ -20,7 +20,7 @@ fi
 
 # Launch programs
 xrdb $HOME/.Xressorces &
-picom  --daemon --config $HOME/.config/picom/picom.conf
+#picom  --daemon --config $HOME/.config/picom/picom.conf
 dunst &
 $HOME/.config/polybar/launch.sh &
 wal -c && wal -i $HOME/Pictures/wal &
