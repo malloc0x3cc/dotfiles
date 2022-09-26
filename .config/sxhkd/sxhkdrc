@@ -4,7 +4,7 @@
 
 # terminal emulator
 super + Return
-	st -e zsh -c 'wal -R && clear && neofetch --ascii ~/Downloads/Lain.txt; exec zsh'
+	st
 
 # program launcher
 super + @space
@@ -24,7 +24,7 @@ super + F2
 
 # Ranger
 super + F3
-	st -e zsh -c 'wal -R && ranger; exec zsh'
+	st -e ranger
 
 # Thunar
 super + F4
