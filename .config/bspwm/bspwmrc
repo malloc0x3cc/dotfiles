@@ -23,9 +23,9 @@ fi
 picom  --daemon --config $HOME/.config/picom/picom.conf
 dunst &
 $HOME/.config/polybar/launch.sh &
-nitrogen --restore
 optimus-manager-qt &
 nm-applet &
+nitrogen --restore &
 
 # Startup sound
 mplayer ~/Music/boot.wav &
