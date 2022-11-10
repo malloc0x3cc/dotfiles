@@ -1,10 +1,17 @@
 #!/bin/sh
-
-picom  --daemon --config $HOME/.config/picom/picom.conf
+numlockx &
 dunst &
-nitrogen --restore
+
+## KDE polkit
+/usr/lib/polkit-kde-authentication-agent-1 &
+
+# Wallpaper
+nitrogen --restore &
+
+# Tray icons
 optimus-manager-qt &
 nm-applet &
+pamac-tray &
 
 # Startup sound
 mplayer ~/Music/boot.wav &

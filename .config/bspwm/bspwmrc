@@ -19,13 +19,21 @@ else
 fi
 
 # Launch programs
-# xrdb $HOME/.Xressorces &
-picom  --daemon --config $HOME/.config/picom/picom.conf
+numlockx &
+# picom  --daemon --config $HOME/.config/picom/picom.conf
 dunst &
 $HOME/.config/polybar/launch.sh &
+
+## KDE polkit
+/usr/lib/polkit-kde-authentication-agent-1 &
+
+# Wallpaper
+nitrogen --restore &
+
+## Tray icons
 optimus-manager-qt &
 nm-applet &
-nitrogen --restore &
+pamac-tray &
 
 # Startup sound
 mplayer ~/Music/boot.wav &
