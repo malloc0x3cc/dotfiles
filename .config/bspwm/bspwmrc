@@ -5,7 +5,7 @@ pgrep -x sxhkd > /dev/null || sxhkd &
 # Setup monitors / workspaces
 if [ "$(xrandr | grep ' connected' | wc -l)" = "2" ]; then
 	# Internal + VGA
-	xrandr --output DP-1-1 --mode 1280x960 --left-of eDP-1-1 --primary
+	xrandr --output DP-1-1 --mode 1600x1200 --left-of eDP-1-1 --primary
 	bspc monitor DP-1-1 -d I
 	bspc monitor eDP-1-1 -d II III IV V VI VII VIII IX X
 	
